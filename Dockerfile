@@ -1,8 +1,5 @@
 FROM java:8 
-
-# Install maven
-RUN apt-get update
-RUN apt-get install -y maven
+FROM maven:alpine
 
 WORKDIR /code
 
@@ -17,3 +14,4 @@ RUN ["mvn", "package"]
 
 EXPOSE 8080
 CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/comic-jar-with-dependencies.jar"]
+
