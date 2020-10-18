@@ -1,4 +1,4 @@
-package comicRest.repository;
+package comic.repository.impl;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,8 +12,9 @@ import java.util.List;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import comicRest.dto.ComicDTO;
-import comicRest.dto.XkcdDTO;
+import comic.dto.ComicDTO;
+import comic.dto.XkcdDTO;
+import comic.repository.interfaces.IComicRepository;
 
 public class XkcdRepository implements IComicRepository {
 
@@ -31,7 +32,7 @@ public class XkcdRepository implements IComicRepository {
 		list.add(comicObject);
 
 		// Add the other to the list
-		for (int i = 1; i < this.NUMBER_RECORDS; i++) {
+		for (int i = 1; i < IComicRepository.getNumberRecords(); i++) {
 			currentXkcd = retrieveLastComics(currentNumber - i);
 			comicObject = currentXkcd.toComicDTO();
 			list.add(comicObject);

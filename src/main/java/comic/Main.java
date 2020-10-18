@@ -1,4 +1,4 @@
-package comicRest;
+package comic;
 
 import static spark.Spark.get;
 import static spark.Spark.port;

@@ -1,4 +1,4 @@
-package comicRest.dto;
+package comic.dto;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

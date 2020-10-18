@@ -1,14 +1,14 @@
-package comicRest;
+package comic;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import comicRest.dto.ComicDTO;
-import comicRest.repository.IComicRepository;
-import comicRest.repository.PdlRepository;
-import comicRest.repository.XkcdRepository;
+import comic.dto.ComicDTO;
+import comic.repository.impl.PdlRepository;
+import comic.repository.impl.XkcdRepository;
+import comic.repository.interfaces.IComicRepository;
 
 public class ComicService {
 
@@ -17,8 +17,9 @@ public class ComicService {
 	ComicService() {
 
 		this.repositories = new ArrayList<IComicRepository>();
-		this.repositories.add(new XkcdRepository());
 		this.repositories.add(new PdlRepository());
+
+		this.repositories.add(new XkcdRepository());
 
 	}
 

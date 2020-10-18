@@ -2,14 +2,14 @@
 XKCD and Poorly Draw Lines consumer API 
 
 ## Todo
-// TODO ordenação no serviço
-	// Date (improve Date handle)
-	// Test
-	// Mock dos serviços via repositorio
-// porta 8080
+# ordenação no serviço
+# Date (improve Date handle)
+	
+# porta 8080
 	// docker compose
 	// co rotinas
-
+// Test
+	// Mock dos serviços via repositorio
 ## Requirements
 
 There is a publicly available API for the webcomic XKCD – [https://xkcd.com/json.html](https://xkcd.com/json.html)

@@ -1,4 +1,4 @@
-package comicRest.repository;
+package comic.repository.impl;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,8 +9,9 @@ import java.util.stream.Stream;
 import com.apptastic.rssreader.Item;
 import com.apptastic.rssreader.RssReader;
 
-import comicRest.dto.ComicDTO;
-import comicRest.dto.PdlDTO;
+import comic.dto.ComicDTO;
+import comic.dto.PdlDTO;
+import comic.repository.interfaces.IComicRepository;
 
 //Poorly Draw Lines
 public class PdlRepository implements IComicRepository {
@@ -23,7 +24,7 @@ public class PdlRepository implements IComicRepository {
 		List<ComicDTO> listToReturn = new ArrayList<ComicDTO>();
 		try {
 			rssFeed = reader.read(FEED_URL);
-			List<Item> articles = rssFeed.limit(this.NUMBER_RECORDS).collect(Collectors.toList());
+			List<Item> articles = rssFeed.limit(IComicRepository.getNumberRecords()).collect(Collectors.toList());
 
 			for (Item item : articles) {
 				PdlDTO PDLComic = new PdlDTO(item.getTitle(), item.getLink(), item.getGuid(), item.getPubDate());

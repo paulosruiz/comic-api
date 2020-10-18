@@ -1,4 +1,4 @@
-package comicRest.dto;
+package comic.dto;
 
 import java.text.DateFormat;
 import java.text.ParseException;
