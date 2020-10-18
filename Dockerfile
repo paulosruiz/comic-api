@@ -1,22 +1,19 @@
-# Use the official maven/Java 8 image to create a build artifact.
- # https://hub.docker.com/_/maven
- FROM maven:3.5-jdk-8-alpine as builder
+FROM java:8 
 
- # Copy local code to the container image.
- WORKDIR /app
- COPY pom.xml .
- COPY src ./src
+# Install maven
+RUN apt-get update
+RUN apt-get install -y maven
 
- # Build a release artifact.
- RUN mvn package -DskipTests
+WORKDIR /code
 
- # Use the Official OpenJDK image for a lean production stage of our multi-stage build.
- # https://hub.docker.com/_/openjdk
- # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
- FROM openjdk:8-jre-alpine
+# Prepare by downloading dependencies
+ADD pom.xml /code/pom.xml
+RUN ["mvn", "dependency:resolve"]
+RUN ["mvn", "verify"]
 
- # Copy the jar to the production image from the builder stage.
- COPY --from=builder /app/target/comic-0.0.1-SNAPSHOT-jar-with-dependencies.jar /comic.jar
+# Adding source, compile and package into a fat jar
+ADD src /code/src
+RUN ["mvn", "package"]
 
- # Run the web service on container startup.
- CMD ["java","-Dserver.port=${PORT}","-jar","/comic.jar"]
+EXPOSE 8080
+CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/comic-jar-with-dependencies.jar"]

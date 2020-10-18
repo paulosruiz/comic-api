@@ -89,7 +89,7 @@
 						</goals>
 						<phase>package</phase>
 						<configuration>
-							<finalName>sparkexample</finalName>
+							<finalName>comic</finalName>
 							<descriptorRefs>
 								<descriptorRef>jar-with-dependencies</descriptorRef>
 							</descriptorRefs>
