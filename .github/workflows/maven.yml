@@ -3,11 +3,14 @@
 
 name: Java CI with Maven
 
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+env:
+  LANG: "pt_BR.UTF-8"
 
 jobs:
   build:
@@ -15,6 +18,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: pt_BR.UTF-8
+      run: |
+          sudo locale-gen pt_BR.UTF-8
+          sudo update-locale LANG=pt_BR.UTF-8
+    - name: date
+      run: |
+          date
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
