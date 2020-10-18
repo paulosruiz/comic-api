@@ -14,15 +14,22 @@ public class PdlDTO {
 	String title, link, guid;
 	String publishedDate;
 
-	public PdlDTO(Optional<String> title, Optional<String> link, Optional<String> guid,
-			Optional<String> publishedDate) {
+	/*public PdlDTO(String title, String link, String guid, String publishedDate) {
 
-		this.title = title.get();
-		this.link = link.get();
-		this.guid = guid.get();
-		this.publishedDate = publishedDate.get();
-
-	}
+		this.title = title;
+		this.link = link;
+		this.guid = guid;
+		this.publishedDate = publishedDate;
+	}*/
+	
+	  public PdlDTO(Optional<String> title, Optional<String> link, Optional<String>
+	  guid, Optional<String> publishedDate) {
+	  
+	  this.title = title.get(); this.link = link.get(); this.guid = guid.get();
+	  this.publishedDate = publishedDate.get();
+	  
+	  }
+	 
 
 	private String getTitle() {
 		return title;

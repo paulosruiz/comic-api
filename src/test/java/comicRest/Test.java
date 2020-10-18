@@ -16,7 +16,7 @@ import comic.dto.ComicDTO;
 
 public class Test {
 
-	@Test
+/*	@Test
 	public void aNonEmptyListIsHandledCorrectlyInHtmlOutput() {
 		ComicDTO model = EasyMock.createMock(ComicDTO.class);
 
@@ -39,8 +39,10 @@ public class Test {
 	                "  \"publishing_date\" : 2020-10-19\n" +
 
 	                "} ]";
+		 ComicService.
 		assertEquals(new Answer(200, expectedHtml), handler.process(new EmptyPayload(), Collections.emptyMap(), true));
 
 		verify(model);
 	}
+	*/
 }
