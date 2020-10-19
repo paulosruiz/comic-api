@@ -50,7 +50,7 @@ List of items to be done in the future.
 
 * Mock apis
 * Add properties file and remove URL's and others parameters that are currently hard-coded.
-* Add contract API on Readme.md
+* Fix Github Action 
 * Add log
 
 
