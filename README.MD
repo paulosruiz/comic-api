@@ -5,7 +5,7 @@ XKCD and Poorly Draw Lines consumer API
 
 API to retrieve comics from XKCD and Poorly Draw Lines. It will return the latest 20 comics from both sites sorted by publish date.
 
-Tech Stuff:Java application running with Spark Java. It's using Java 11 and Maven for build.
+Tech backgroung: Java application running with Spark Java. It's using Java 11 and Maven for build.
 
 ## How to run
 
@@ -76,6 +76,7 @@ We have the following expectations towards your solution.
 - It is readable and comprehensible
 - The code is structured reasonably and the architecture can be justified
 - It has tests
+
 
 * Publication
 
