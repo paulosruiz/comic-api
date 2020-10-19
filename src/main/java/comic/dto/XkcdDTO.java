@@ -67,8 +67,6 @@ public class XkcdDTO {
 		ret.setDate(LocalDate.of(Integer.valueOf(this.year).intValue(), Integer.valueOf(this.month).intValue(),
 				Integer.valueOf(this.day).intValue()));
 		
-		// ret.setPublishingDate(this.year + "-" + this.month + "-" + this.day);
-
 		return ret;
 	}
 

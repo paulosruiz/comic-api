@@ -25,14 +25,14 @@ public class ComicService implements IComicService {
 
 	}
 
-	public String retrieveComics() {
+	public List<ComicDTO> retrieveComics() {
 
 		List<ComicDTO> listComics = getComics();
 
 		sortByPublishDate(listComics);
-
-		return mapComic(listComics);
-
+	
+		return listComics;
+		
 	}
 
 	public String mapComic(List<ComicDTO> listComics) {

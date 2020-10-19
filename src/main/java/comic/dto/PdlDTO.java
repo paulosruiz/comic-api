@@ -14,52 +14,48 @@ public class PdlDTO {
 	String title, link, guid;
 	String publishedDate;
 
-	/*public PdlDTO(String title, String link, String guid, String publishedDate) {
+	public PdlDTO(Optional<String> title, Optional<String> link, Optional<String> guid,
+			Optional<String> publishedDate) {
 
-		this.title = title;
-		this.link = link;
-		this.guid = guid;
-		this.publishedDate = publishedDate;
-	}*/
-	
-	  public PdlDTO(Optional<String> title, Optional<String> link, Optional<String>
-	  guid, Optional<String> publishedDate) {
-	  
-	  this.title = title.get(); this.link = link.get(); this.guid = guid.get();
-	  this.publishedDate = publishedDate.get();
-	  
-	  }
-	 
+		this.title = title.get();
+		this.link = link.get();
+		this.guid = guid.get();
+		this.publishedDate = publishedDate.get();
 
-	private String getTitle() {
+	}
+
+	public PdlDTO() {
+	}
+
+	public String getTitle() {
 		return title;
 	}
 
-	private void setTitle(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	private String getLink() {
+	public String getLink() {
 		return link;
 	}
 
-	private void setLink(String link) {
+	public void setLink(String link) {
 		this.link = link;
 	}
 
-	private String getGuid() {
+	public String getGuid() {
 		return guid;
 	}
 
-	private void setGuid(String guid) {
+	public void setGuid(String guid) {
 		this.guid = guid;
 	}
 
-	private String getPublishedDate() {
+	public String getPublishedDate() {
 		return publishedDate;
 	}
 
-	private void setPublishedDate(String publishedDate) {
+	public void setPublishedDate(String publishedDate) {
 		this.publishedDate = publishedDate;
 	}
 

@@ -1,5 +1,9 @@
 package comic.service.interfaces;
 
+import java.util.List;
+
+import comic.dto.ComicDTO;
+
 public interface IComicService {
-	public String retrieveComics();
+	public List<ComicDTO> retrieveComics();
 }
