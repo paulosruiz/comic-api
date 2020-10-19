@@ -9,15 +9,12 @@ Tech backgroung: Java application running with Spark Java. It's using Java 11 an
 
 ## How to run
 
-To build and run the application please perform the following steps. Note, Docker is required.
-
-```shell script
-docker-compose build
-```
+To build and run the application please perform the following step. (Docker is required)
 
 ```shell script
 docker-compose up
 ```
+
 
 ## Endpoint
 
@@ -30,12 +27,20 @@ http://localhost:8080/retrieve
 Sample response for application:
 
 ```
-{
-  "pictureURL":"https://imgs.xkcd.com/comics/chemist_eggs.png",
-  "title":"Chemist Eggs",
-  "browserURL":"https://xkcd.com/2373",
-  "publishingDate":"2020-10-16"
- }
+[
+  {
+    "pictureURL":"https://imgs.xkcd.com/comics/prediction.png",
+    "title":"Prediction",
+    "browserURL":"https://xkcd.com/2370",
+    "publishingDate":"2020-10-09"
+  },
+  {
+    "pictureURL":"http://feedproxy.google.com/~r/PoorlyDrawnLines/~3/EKcE_QiSL8U/",
+    "title":"Listen to Me",
+    "browserURL":"http://www.poorlydrawnlines.com/?p=7793",
+    "publishingDate":"2020-10-07"
+  }
+ ]
 ```
 
 
