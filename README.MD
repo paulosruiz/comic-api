@@ -1,14 +1,6 @@
 # comic-api
 XKCD and Poorly Draw Lines consumer API 
 
-## Index
-
-- [Summary](#summary-)
-- [How to run](#how to run-)
-- [Endpoint](#endpoint-)
-- [Pending](#pending-)
-- [Requirements](#requirements-)
-
 ## Summary
 
 API to retrieve comics from XKCD and Poorly Draw Lines. It will return the latest 20 comics from both sites sorted by publish date.
@@ -34,6 +26,19 @@ To retrieve the comics from the repository, please hit the url
 http://localhost:8080/retrieve
 ```
 
+## API Response
+Sample response for application:
+
+```
+{
+  "pictureURL":"https://imgs.xkcd.com/comics/chemist_eggs.png",
+  "title":"Chemist Eggs",
+  "browserURL":"https://xkcd.com/2373",
+  "publishingDate":"2020-10-16"
+ }
+```
+
+
 ## Pending
 
 List of items to be done in the future.
@@ -41,7 +46,7 @@ List of items to be done in the future.
 * Mock apis
 * Add properties file and remove URL's and others parameters that are currently hard-coded.
 * Add contract API on Readme.md
-* Add log to the application
+* Add log
 
 
 ## Requirements (by Company)
