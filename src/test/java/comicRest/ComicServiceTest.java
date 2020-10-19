@@ -17,32 +17,12 @@ public class ComicServiceTest {
 
 	@Test
 	public void getComics() {
+		//TODO Mock apis
 		ComicService cs = new ComicService();
 		List<ComicDTO> list = cs.getComics();
 
 		assertNotNull("List Retrieved", list);
-
 		assertEquals("List has 20 objects", list.size(), 20);
-
-	}
-
-	@Test
-	public void map() {
-		ComicService cs = new ComicService();
-
-		ComicDTO post2 = new ComicDTO();
-		post2.setTitle("First comic");
-		post2.setBrowserURL("http://browser.url/urlbrowser");
-		post2.setPictureURL("http://picture.url/urlpicture");
-		post2.setDate(LocalDate.of(2020, 10, 18));
-
-		List<ComicDTO> list = new ArrayList<ComicDTO>();
-		list.add(post2);
-		String result = cs.mapComic(list);
-
-		String expected = "[{\"pictureURL\":\"http://picture.url/urlpicture\",\"title\":\"First comic\",\"browserURL\":\"http://browser.url/urlbrowser\",\"publishingDate\":\"2020-10-18\"}]";
-		assertEquals("Test Map", expected, result);
-
 	}
 
 	@Test
@@ -69,5 +49,4 @@ public class ComicServiceTest {
 		assertEquals("List Sorted by Date", post2, list.get(0));
 	}
 
-	
 }
