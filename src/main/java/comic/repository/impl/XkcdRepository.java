@@ -21,7 +21,7 @@ public class XkcdRepository implements IComicRepository {
 	final static String CURRENT_URL = "https://xkcd.com/info.0.json";
 	final static String NUMBER_URL = "https://xkcd.com/NUMBER/info.0.json";
 
-	public List<ComicDTO> retrieve() {
+	public List<ComicDTO> retrieve(int qty) {
 
 		final List<ComicDTO> list = new ArrayList<ComicDTO>();
 		XkcdDTO currentXkcd = retrieveCurrent();
@@ -32,10 +32,12 @@ public class XkcdRepository implements IComicRepository {
 		list.add(comicObject);
 
 		// Add the other to the list
-		for (int i = 1; i < IComicRepository.getNumberRecords(); i++) {
+		for (int i = 1; i < qty; i++) {
 			currentXkcd = retrieveLastComics(currentNumber - i);
-			comicObject = currentXkcd.toComicDTO();
-			list.add(comicObject);
+			if (currentXkcd != null) {
+				comicObject = currentXkcd.toComicDTO();
+				list.add(comicObject);
+			}
 		}
 
 		return list;

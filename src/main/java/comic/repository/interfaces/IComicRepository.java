@@ -7,9 +7,6 @@ public interface IComicRepository {
 
 	
 	
-	static int getNumberRecords() {
-		return 10;
-	}
-	public List<ComicDTO> retrieve();
+	public List<ComicDTO> retrieve(int qty);
 	
 }
